@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xlmns:th="http://www.thymeleaf.org">
+
+<head>
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title> ADD PLAYER </title>
+</head>
+
+<body>
+	<div class="container">
+	<h3> ADD PLAYER </h3>
+	<hr>
+	
+	<form action="#" th:action="@{/save}" th:object="${player}" method="post">
+		<input type="hidden" th:field="*{id}" />
+		<input type="text" th:field="*{playerName}" class="form-control mb-4 col-4" placeholder="Player Name">
+		<input type="text" th:field="*{role}" class="form-control mb-4 col-4" placeholder="Role">
+		<input type="text" th:field="*{team}" class="form-control mb-4 col-4" placeholder="Franchise">
+		<input type="text" th:field="*{nationality}" class="form-control mb-4 col-4" placeholder="Nationality">
+		<button type="submit" class="btn btn-info col-2"> Save </button>
+	</form>
+	<hr>
+	<a th:href="@{/list}"> Back to Players List</a>
+	</div>
+</body>
+</html>
